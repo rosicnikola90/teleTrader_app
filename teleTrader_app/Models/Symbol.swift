@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Symbol {
-    
+struct Symbol: Equatable {
+
     var id: String?
     var name: String?
     var tickerSymbol: String?
@@ -17,4 +17,8 @@ struct Symbol {
     var stockExchangeName: String?
     var decorativeName: String?
     var quote: Quote?
+    
+    static func == (lhs: Symbol, rhs: Symbol) -> Bool {
+        return lhs.name == rhs.name
+    }
 }

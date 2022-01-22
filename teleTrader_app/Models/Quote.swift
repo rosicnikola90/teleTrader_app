@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Quote {
+struct Quote: Equatable {
 
     var last: String?
     var high: String?

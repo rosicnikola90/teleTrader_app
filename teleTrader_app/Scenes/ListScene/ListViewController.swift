@@ -12,8 +12,37 @@ final class ListViewController: UIViewController {
     //MARK: - properties
     @IBOutlet weak var filteringView: UIView!
     @IBOutlet weak var listTableView: UITableView!
+    @IBOutlet weak var namesButtonLabel: UIButton!
+    @IBOutlet weak var upArrowImage: UIImageView!
+    @IBOutlet weak var downArrowImage: UIImageView!
     
     lazy var viewModel = ListViewModel()
+    private var namesPressCount = 0 {
+        didSet {
+            let moduo = namesPressCount % 3
+            print(moduo)
+            stateOfNamesFilter = StateOfNamesFilter(rawValue: moduo) ?? .unsorted
+        }
+    }
+    private var stateOfNamesFilter: StateOfNamesFilter = .unsorted {
+        didSet {
+            switch stateOfNamesFilter {
+            case .ascending:
+                viewModel.sortSymbolsAscending()
+                upArrowImage.tintColor = .systemBlue
+                downArrowImage.tintColor = .label
+            case .descending:
+                viewModel.sortSymbolsDescending()
+                upArrowImage.tintColor = .label
+                downArrowImage.tintColor = .systemBlue
+            case .unsorted:
+                viewModel.sortSymbolsToDefault()
+                upArrowImage.tintColor = .label
+                downArrowImage.tintColor = .label
+            }
+            listTableView.reloadData()
+        }
+    }
     
     //MARK: - lifecycle
     override func viewDidLoad() {
@@ -31,7 +60,7 @@ final class ListViewController: UIViewController {
     
     //MARK: - setup metodes
     private func setupView() {
-        filteringView.backgroundColor = .darkGray
+        filteringView.backgroundColor = .quaternarySystemFill
         view.backgroundColor = .systemBackground
         title = "List"
         viewModel.delegate = self
@@ -41,6 +70,10 @@ final class ListViewController: UIViewController {
         listTableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "listCell")
         listTableView.delegate = self
         listTableView.dataSource = viewModel
+    }
+    
+    @IBAction func namesPressed(_ sender: UIButton) {
+        namesPressCount += 1
     }
     
 }
@@ -66,7 +99,7 @@ extension ListViewController: UITableViewDelegate {
 //MARK: -extension for ViewModelDelegate
 extension ListViewController: ListViewModelDelegate {
     func symbolsUpdatedWitSuccess() {
-        listTableView.reloadData()
+        namesPressCount = 0
     }
     
     func symbolsUpdatedWithError(error: String) {

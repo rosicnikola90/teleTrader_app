@@ -12,15 +12,19 @@ protocol ListViewModelDelegate: class {
     func symbolsUpdatedWithError(error: String)
 }
 
+enum StateOfNamesFilter: Int {
+    case unsorted = 0
+    case ascending
+    case descending
+}
+
 final class ListViewModel: NSObject {
     
     //MARK: - properties
     weak var delegate: ListViewModelDelegate?
-    private var symbols: [Symbol] = [] {
-        didSet {
-            // reload data
-        }
-    }
+    private var symbols: [Symbol] = []
+    private var sortedSymbols: [Symbol] = []
+    private var isNamesFilterOn = false
     
     //MARK: - init
     deinit {
@@ -45,28 +49,60 @@ final class ListViewModel: NSObject {
         }
     }
     
+    func sortSymbolsAscending() {
+        isNamesFilterOn = true
+        sortedSymbols = symbols.sorted(by: { $0.name! < $1.name! })
+    }
+    
+    func sortSymbolsDescending() {
+        isNamesFilterOn = true
+        sortedSymbols = symbols.sorted(by: { $0.name! > $1.name! })
+    }
+    
+    func sortSymbolsToDefault() {
+        isNamesFilterOn = false
+    }
+    
 }
 
 // MARK: - extension
 extension ListViewModel: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return symbols.count
+        if isNamesFilterOn {
+            return sortedSymbols.count
+        } else {
+            return symbols.count
+        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .fade)
-            //proveriti filter
-            self.symbols.remove(at: indexPath.row)
+            var symbolToDelete = Symbol()
+            if isNamesFilterOn {
+                symbolToDelete = self.sortedSymbols.remove(at: indexPath.row)
+                if let index = symbols.firstIndex(of: symbolToDelete) {
+                    symbols.remove(at: index)
+                }
+            } else {
+                symbolToDelete = self.symbols.remove(at: indexPath.row)
+                if let index = sortedSymbols.firstIndex(of: symbolToDelete) {
+                    sortedSymbols.remove(at: index)
+                }
+            }
             tableView.endUpdates()
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListTableViewCell
-        cell.configureCell(withSymbol: symbols[indexPath.row])
+        if isNamesFilterOn {
+            cell.configureCell(withSymbol: sortedSymbols[indexPath.row])
+        } else {
+            cell.configureCell(withSymbol: symbols[indexPath.row])
+        }
         return cell
     }
     
