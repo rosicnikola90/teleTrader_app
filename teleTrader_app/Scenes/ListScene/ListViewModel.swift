@@ -54,6 +54,16 @@ extension ListViewModel: UITableViewDataSource {
         return symbols.count
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            //proveriti filter
+            self.symbols.remove(at: indexPath.row)
+            tableView.endUpdates()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListTableViewCell
         cell.configureCell(withSymbol: symbols[indexPath.row])
