@@ -18,6 +18,7 @@ final class ListViewController: UIViewController {
     
     lazy private var viewModel = ListViewModel()
     
+    private var selectedSymbol: Symbol?
     private var namesPressCount = 0 {
         didSet {
             let moduo = namesPressCount % 3
@@ -90,6 +91,15 @@ final class ListViewController: UIViewController {
         refresh.endRefreshing()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedSymbol = self.selectedSymbol else { return }
+        if segue.identifier == "goToDetails" {
+            if let destinationVC = segue.destination as? SymbolDetailsViewController {
+                destinationVC.symbol = selectedSymbol
+            }
+        }
+    }
+    
 }
 
 //MARK: -extension for TableView Delegate
@@ -105,6 +115,10 @@ extension ListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let symbolsArray = viewModel.returnSymbolDataBasedOnNamesFilter()
+        selectedSymbol = symbolsArray[indexPath.row]
+        
+        performSegue(withIdentifier: "goToDetails", sender: self)
     }
 }
 
@@ -117,7 +131,7 @@ extension ListViewController: ListViewModelDelegate {
     }
     
     func symbolsUpdatedWithError(error: String) {
-        
+        showAlert(title: "", message: error)
     }
 }
 

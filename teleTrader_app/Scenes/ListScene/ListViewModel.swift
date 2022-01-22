@@ -63,9 +63,17 @@ final class ListViewModel: NSObject {
         isNamesFilterOn = false
     }
     
+    func returnSymbolDataBasedOnNamesFilter() -> [Symbol] {
+        if isNamesFilterOn {
+            return sortedSymbols
+        } else {
+            return symbols
+        }
+    }
+    
 }
 
-// MARK: - extension
+// MARK: - extension tableViewDataSource
 extension ListViewModel: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

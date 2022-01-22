@@ -26,6 +26,7 @@
 		BC497198279C3B2200BF5925 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497196279C3B2200BF5925 /* ListTableViewCell.swift */; };
 		BC497199279C3B2200BF5925 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC497197279C3B2200BF5925 /* ListTableViewCell.xib */; };
 		BC49719C279C5E9A00BF5925 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49719B279C5E9A00BF5925 /* Extensions.swift */; };
+		BC4971A0279CB46800BF5925 /* SymbolDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49719F279CB46700BF5925 /* SymbolDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		BC497196279C3B2200BF5925 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		BC497197279C3B2200BF5925 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		BC49719B279C5E9A00BF5925 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BC49719F279CB46700BF5925 /* SymbolDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		BC497193279C340200BF5925 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				BC49719E279CB40A00BF5925 /* SymbolDetailsScene */,
 				BC497194279C342700BF5925 /* ListScene */,
 			);
 			path = Scenes;
@@ -153,6 +156,14 @@
 				BC497197279C3B2200BF5925 /* ListTableViewCell.xib */,
 			);
 			path = ListScene;
+			sourceTree = "<group>";
+		};
+		BC49719E279CB40A00BF5925 /* SymbolDetailsScene */ = {
+			isa = PBXGroup;
+			children = (
+				BC49719F279CB46700BF5925 /* SymbolDetailsViewController.swift */,
+			);
+			path = SymbolDetailsScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +242,7 @@
 				BC497171279B600C00BF5925 /* DataManager.swift in Sources */,
 				BC497181279BEED500BF5925 /* MainTabBarController.swift in Sources */,
 				BC49718D279C0D0800BF5925 /* Quote.swift in Sources */,
+				BC4971A0279CB46800BF5925 /* SymbolDetailsViewController.swift in Sources */,
 				BC497152279B53DC00BF5925 /* AppDelegate.swift in Sources */,
 				BC497174279B64B600BF5925 /* RestManager.swift in Sources */,
 				BC497198279C3B2200BF5925 /* ListTableViewCell.swift in Sources */,
