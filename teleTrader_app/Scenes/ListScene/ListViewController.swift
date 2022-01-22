@@ -16,7 +16,8 @@ final class ListViewController: UIViewController {
     @IBOutlet weak var upArrowImage: UIImageView!
     @IBOutlet weak var downArrowImage: UIImageView!
     
-    lazy var viewModel = ListViewModel()
+    lazy private var viewModel = ListViewModel()
+    
     private var namesPressCount = 0 {
         didSet {
             let moduo = namesPressCount % 3
@@ -44,6 +45,12 @@ final class ListViewController: UIViewController {
         }
     }
     
+    private let refresh: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = .label
+        return refreshControl
+    }()
+    
     //MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +69,7 @@ final class ListViewController: UIViewController {
     private func setupView() {
         filteringView.backgroundColor = .quaternarySystemFill
         view.backgroundColor = .systemBackground
+        refresh.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         title = "List"
         viewModel.delegate = self
     }
@@ -70,10 +78,16 @@ final class ListViewController: UIViewController {
         listTableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "listCell")
         listTableView.delegate = self
         listTableView.dataSource = viewModel
+        listTableView.addSubview(refresh)
     }
     
     @IBAction func namesPressed(_ sender: UIButton) {
         namesPressCount += 1
+    }
+    
+    @objc private func handleRefresh() {
+        viewModel.getSymbols()
+        refresh.endRefreshing()
     }
     
 }
