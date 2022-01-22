@@ -21,6 +21,25 @@ final class DataManager {
     //MARK: - init
     private init() {}
     
+    deinit {
+        print("DataManager deinit")
+    }
     
+    //MARK: - methods
+    func getNeededSymbols(_ completion: @escaping([Symbol]?, String?) -> ()) {
+        // proveriti odakle se povlace podaci pa dovuci
+        
+        RestManager.sharedInstance.getSymbolsFromServer { (symbols, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let symbols = symbols {
+                    completion(symbols, nil)
+                } else {
+                    completion(nil, "something went wrong")
+                }
+            }
+        }
+    }
     
 }

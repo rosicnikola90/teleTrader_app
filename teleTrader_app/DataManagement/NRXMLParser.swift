@@ -21,8 +21,13 @@ final class NRXMLParser: NSObject {
             xmlParser = XMLParser(data: data)
         }
     }
+    
+    deinit {
+        print("NRXMLParser deinit")
+    }
+    
     /// parse Xml String and returns array of Symbol models
-    func parse() -> [Symbol] {
+    func parseSymbols() -> [Symbol] {
         xmlParser?.delegate = self
         xmlParser?.parse()
         return symbols

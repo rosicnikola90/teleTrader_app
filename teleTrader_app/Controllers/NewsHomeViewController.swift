@@ -13,7 +13,8 @@ final class NewsHomeViewController: UIViewController {
         super.viewDidLoad()
         
         print("NewsHomeViewController")
-        view.backgroundColor = .red
+        view.backgroundColor = .systemBackground
+        
     }
 
 

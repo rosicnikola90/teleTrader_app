@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		BC497152279B53DC00BF5925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497151279B53DC00BF5925 /* AppDelegate.swift */; };
 		BC497154279B53DC00BF5925 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497153279B53DC00BF5925 /* SceneDelegate.swift */; };
-		BC497156279B53DC00BF5925 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497155279B53DC00BF5925 /* ViewController.swift */; };
+		BC497156279B53DC00BF5925 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497155279B53DC00BF5925 /* ListViewController.swift */; };
 		BC497159279B53DC00BF5925 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC497157279B53DC00BF5925 /* Main.storyboard */; };
 		BC49715C279B53DD00BF5925 /* teleTrader_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC49715A279B53DD00BF5925 /* teleTrader_app.xcdatamodeld */; };
 		BC49715E279B53DE00BF5925 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC49715D279B53DE00BF5925 /* Assets.xcassets */; };
@@ -22,13 +22,17 @@
 		BC497184279BF42100BF5925 /* NRXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497183279BF42100BF5925 /* NRXMLParser.swift */; };
 		BC497188279BF5D900BF5925 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497187279BF5D900BF5925 /* Symbol.swift */; };
 		BC49718D279C0D0800BF5925 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49718C279C0D0800BF5925 /* Quote.swift */; };
+		BC497191279C333600BF5925 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497190279C333600BF5925 /* ListViewModel.swift */; };
+		BC497198279C3B2200BF5925 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497196279C3B2200BF5925 /* ListTableViewCell.swift */; };
+		BC497199279C3B2200BF5925 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC497197279C3B2200BF5925 /* ListTableViewCell.xib */; };
+		BC49719C279C5E9A00BF5925 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49719B279C5E9A00BF5925 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BC49714E279B53DC00BF5925 /* teleTrader_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = teleTrader_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC497151279B53DC00BF5925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC497153279B53DC00BF5925 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BC497155279B53DC00BF5925 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BC497155279B53DC00BF5925 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		BC497158279B53DC00BF5925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BC49715B279B53DD00BF5925 /* teleTrader_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = teleTrader_app.xcdatamodel; sourceTree = "<group>"; };
 		BC49715D279B53DE00BF5925 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +46,10 @@
 		BC497183279BF42100BF5925 /* NRXMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRXMLParser.swift; sourceTree = "<group>"; };
 		BC497187279BF5D900BF5925 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		BC49718C279C0D0800BF5925 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		BC497190279C333600BF5925 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		BC497196279C3B2200BF5925 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		BC497197279C3B2200BF5925 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		BC49719B279C5E9A00BF5925 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,7 @@
 		BC497150279B53DC00BF5925 /* teleTrader_app */ = {
 			isa = PBXGroup;
 			children = (
+				BC497193279C340200BF5925 /* Scenes */,
 				BC497186279BF5B700BF5925 /* Models */,
 				BC49717F279BEE7300BF5925 /* Controllers */,
 				BC49717A279B665200BF5925 /* SupportFiles */,
@@ -103,6 +112,7 @@
 				BC497176279B657400BF5925 /* Constants.swift */,
 				BC497151279B53DC00BF5925 /* AppDelegate.swift */,
 				BC497153279B53DC00BF5925 /* SceneDelegate.swift */,
+				BC49719B279C5E9A00BF5925 /* Extensions.swift */,
 			);
 			name = SupportFiles;
 			path = teleTrader_app/SupportFiles;
@@ -111,7 +121,6 @@
 		BC49717F279BEE7300BF5925 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BC497155279B53DC00BF5925 /* ViewController.swift */,
 				BC49716B279B5DD400BF5925 /* NewsHomeViewController.swift */,
 				BC497180279BEED500BF5925 /* MainTabBarController.swift */,
 			);
@@ -125,6 +134,25 @@
 				BC49718C279C0D0800BF5925 /* Quote.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BC497193279C340200BF5925 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				BC497194279C342700BF5925 /* ListScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		BC497194279C342700BF5925 /* ListScene */ = {
+			isa = PBXGroup;
+			children = (
+				BC497190279C333600BF5925 /* ListViewModel.swift */,
+				BC497155279B53DC00BF5925 /* ListViewController.swift */,
+				BC497196279C3B2200BF5925 /* ListTableViewCell.swift */,
+				BC497197279C3B2200BF5925 /* ListTableViewCell.xib */,
+			);
+			path = ListScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC497161279B53DE00BF5925 /* LaunchScreen.storyboard in Resources */,
+				BC497199279C3B2200BF5925 /* ListTableViewCell.xib in Resources */,
 				BC49715E279B53DE00BF5925 /* Assets.xcassets in Resources */,
 				BC497159279B53DC00BF5925 /* Main.storyboard in Resources */,
 			);
@@ -198,14 +227,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC497184279BF42100BF5925 /* NRXMLParser.swift in Sources */,
-				BC497156279B53DC00BF5925 /* ViewController.swift in Sources */,
+				BC497156279B53DC00BF5925 /* ListViewController.swift in Sources */,
 				BC497171279B600C00BF5925 /* DataManager.swift in Sources */,
 				BC497181279BEED500BF5925 /* MainTabBarController.swift in Sources */,
 				BC49718D279C0D0800BF5925 /* Quote.swift in Sources */,
 				BC497152279B53DC00BF5925 /* AppDelegate.swift in Sources */,
 				BC497174279B64B600BF5925 /* RestManager.swift in Sources */,
+				BC497198279C3B2200BF5925 /* ListTableViewCell.swift in Sources */,
 				BC497188279BF5D900BF5925 /* Symbol.swift in Sources */,
 				BC497154279B53DC00BF5925 /* SceneDelegate.swift in Sources */,
+				BC49719C279C5E9A00BF5925 /* Extensions.swift in Sources */,
+				BC497191279C333600BF5925 /* ListViewModel.swift in Sources */,
 				BC497177279B657400BF5925 /* Constants.swift in Sources */,
 				BC49716C279B5DD400BF5925 /* NewsHomeViewController.swift in Sources */,
 				BC49715C279B53DD00BF5925 /* teleTrader_app.xcdatamodeld in Sources */,

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Symbol {
+struct Symbol {
     
     var id: String?
     var name: String?

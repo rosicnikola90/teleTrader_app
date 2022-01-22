@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Quote {
+struct Quote {
 
     var last: String?
     var high: String?

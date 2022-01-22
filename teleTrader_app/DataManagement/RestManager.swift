@@ -25,10 +25,15 @@ final class RestManager {
         self.session = session
     }
     
+    deinit {
+        print("RestManager deinit")
+    }
+    
     //MARK: - get methods
     func getSymbolsFromServer(_ completion: @escaping([Symbol]?, String?) -> ()) {
         guard let url = URL(string: Constants.urlForSymbolList) else { completion(nil, "URL error"); return }
         
+        print("getSymbolsFromServer URL: \(url)")
         let task = session.dataTask(with: url, completionHandler: {
             (data, response, error) in
             
@@ -41,8 +46,9 @@ final class RestManager {
                 if let data = data, httpResponse.statusCode == 200 {
                     if let string = String(data: data, encoding: .utf8) {
                         let parser = NRXMLParser(withXML: string)
-                        let array = parser.parse()
-                        completion(array, nil)
+                        let arrayOfSymbols = parser.parseSymbols()
+                        print("getSymbolsFromServer success count: \(arrayOfSymbols.count)")
+                        completion(arrayOfSymbols, nil)
                     }
                 } else {
                     completion(nil, error?.localizedDescription ?? "error with data")
