@@ -26,18 +26,29 @@ final class RestManager {
     }
     
     //MARK: - get methods
-    func getSymbolsFromServer(_ completion: @escaping(String?, String?) -> ()) {
+    func getSymbolsFromServer(_ completion: @escaping([Symbol]?, String?) -> ()) {
         guard let url = URL(string: Constants.urlForSymbolList) else { completion(nil, "URL error"); return }
         
         let task = session.dataTask(with: url, completionHandler: {
             (data, response, error) in
             
-            if error != nil {
-                print(error!.localizedDescription)
-            }
-            if let data = data {
-                let string = String(data: data, encoding: .utf8)
-                print(string ?? "")
+            if let httpResponse = response as? HTTPURLResponse {
+                
+                if let error = error {
+                    print(error.localizedDescription)
+                    completion(nil, error.localizedDescription)
+                }
+                if let data = data, httpResponse.statusCode == 200 {
+                    if let string = String(data: data, encoding: .utf8) {
+                        let parser = NRXMLParser(withXML: string)
+                        let array = parser.parse()
+                        completion(array, nil)
+                    }
+                } else {
+                    completion(nil, error?.localizedDescription ?? "error with data")
+                }
+            } else {
+                completion(nil, error?.localizedDescription ?? "no response")
             }
         })
         task.resume()

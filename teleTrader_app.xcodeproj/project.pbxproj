@@ -19,6 +19,9 @@
 		BC497174279B64B600BF5925 /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497173279B64B600BF5925 /* RestManager.swift */; };
 		BC497177279B657400BF5925 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497176279B657400BF5925 /* Constants.swift */; };
 		BC497181279BEED500BF5925 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497180279BEED500BF5925 /* MainTabBarController.swift */; };
+		BC497184279BF42100BF5925 /* NRXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497183279BF42100BF5925 /* NRXMLParser.swift */; };
+		BC497188279BF5D900BF5925 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497187279BF5D900BF5925 /* Symbol.swift */; };
+		BC49718D279C0D0800BF5925 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49718C279C0D0800BF5925 /* Quote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		BC497173279B64B600BF5925 /* RestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManager.swift; sourceTree = "<group>"; };
 		BC497176279B657400BF5925 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BC497180279BEED500BF5925 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		BC497183279BF42100BF5925 /* NRXMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRXMLParser.swift; sourceTree = "<group>"; };
+		BC497187279BF5D900BF5925 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
+		BC49718C279C0D0800BF5925 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 		BC497150279B53DC00BF5925 /* teleTrader_app */ = {
 			isa = PBXGroup;
 			children = (
+				BC497186279BF5B700BF5925 /* Models */,
 				BC49717F279BEE7300BF5925 /* Controllers */,
 				BC49717A279B665200BF5925 /* SupportFiles */,
 				BC49716F279B5FF200BF5925 /* DataManagement */,
@@ -84,6 +91,7 @@
 			children = (
 				BC497170279B600C00BF5925 /* DataManager.swift */,
 				BC497173279B64B600BF5925 /* RestManager.swift */,
+				BC497183279BF42100BF5925 /* NRXMLParser.swift */,
 			);
 			path = DataManagement;
 			sourceTree = "<group>";
@@ -108,6 +116,15 @@
 				BC497180279BEED500BF5925 /* MainTabBarController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BC497186279BF5B700BF5925 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BC497187279BF5D900BF5925 /* Symbol.swift */,
+				BC49718C279C0D0800BF5925 /* Quote.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,11 +197,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC497184279BF42100BF5925 /* NRXMLParser.swift in Sources */,
 				BC497156279B53DC00BF5925 /* ViewController.swift in Sources */,
 				BC497171279B600C00BF5925 /* DataManager.swift in Sources */,
 				BC497181279BEED500BF5925 /* MainTabBarController.swift in Sources */,
+				BC49718D279C0D0800BF5925 /* Quote.swift in Sources */,
 				BC497152279B53DC00BF5925 /* AppDelegate.swift in Sources */,
 				BC497174279B64B600BF5925 /* RestManager.swift in Sources */,
+				BC497188279BF5D900BF5925 /* Symbol.swift in Sources */,
 				BC497154279B53DC00BF5925 /* SceneDelegate.swift in Sources */,
 				BC497177279B657400BF5925 /* Constants.swift in Sources */,
 				BC49716C279B5DD400BF5925 /* NewsHomeViewController.swift in Sources */,

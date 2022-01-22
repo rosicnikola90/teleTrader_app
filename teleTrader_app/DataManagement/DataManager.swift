@@ -10,17 +10,17 @@ import CoreData
 
 
 final class DataManager {
-
-//MARK: - properties
-public static let sharedInstance = DataManager()
-private(set) var managedContext: NSManagedObjectContext!
-private var defaults: UserDefaults {
-    get { return .standard }
-}
-
-//MARK: - init
-private init() {}
-
+    
+    //MARK: - properties
+    public static let sharedInstance = DataManager()
+    private(set) var managedContext: NSManagedObjectContext!
+    private var defaults: UserDefaults {
+        get { return .standard }
+    }
+    
+    //MARK: - init
+    private init() {}
+    
     
     
 }
