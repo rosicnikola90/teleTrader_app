@@ -56,9 +56,8 @@ final class DataManager {
         }
     }
     
-    func getNewsImageData(forCode code: String, _ completion: @escaping(Data?, String?, String?) -> ()) {
-        
-        RestManager.sharedInstance.getImageData(forImageCode: code) { (data, error, id) in
+    func getNewsImageData(forCode code: String, andSize size: NewsImageSize, _ completion: @escaping(Data?, String?, String?) -> ()) {
+        RestManager.sharedInstance.getImageData(forImageCode: code, withSize: size) { (data, error, id) in
             if error != nil {
                 completion(nil, error, nil)
             } else {

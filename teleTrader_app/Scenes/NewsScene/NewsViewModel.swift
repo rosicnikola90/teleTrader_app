@@ -43,6 +43,10 @@ final class NewsViewModel: NSObject {
         }
     }
     
+    func returnSelectedNews(forIndexPath indexPath: IndexPath) -> News {
+        return newsArray[indexPath.row]
+    }
+    
 }
 
 // MARK: - extension tableViewDataSource

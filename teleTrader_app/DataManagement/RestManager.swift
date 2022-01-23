@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum NewsImageSize: String {
+    case small = "small"
+    case medium = "medium"
+    case large = "large"
+}
+
 final class RestManager {
     
     //MARK: - properties
@@ -92,21 +98,29 @@ final class RestManager {
         task.resume()
     }
     
-    func getImageData(forImageCode code: String, _ completion: @escaping(Data?, String?, String?) -> ()) {
+    func getImageData(forImageCode code: String, withSize size: NewsImageSize, _ completion: @escaping(Data?, String?, String?) -> ()) {
         
-        if let imageData = imageDataForNews.object(forKey: NSString(string: code)) {
-            completion(imageData as Data, nil, code)
-            return
+        
+        var urlString = Constants.prefixForURLToNewsImage + code + Constants.sufixForURLToNewsImage
+        switch size {
+        case .small:
+            urlString += Constants.sizeSufixSmall
+            if let imageData = imageDataForNews.object(forKey: NSString(string: code)) {
+                completion(imageData as Data, nil, code)
+                return
+            }
+        case .medium:
+            urlString += Constants.sizeSufixMedium
+        case .large:
+            urlString += Constants.sizeSufixLarge
         }
-        
-        let urlString = Constants.prefixForURLToNewsImage + code + Constants.sufixForURLToNewsImage
         guard let url = URL(string: urlString) else { completion(nil, "URL error", nil); return }
         print("getSymbolsFromServer URL: \(url)")
         let task = session.downloadTask(with: url) {
             (localURL, response, error) in
-
+            
             if let httpResponse = response as? HTTPURLResponse {
-
+                
                 if let error = error {
                     print(error.localizedDescription)
                     completion(nil, error.localizedDescription, nil)

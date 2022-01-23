@@ -55,3 +55,39 @@ extension Date {
         return formatter.localizedString(for: self, relativeTo: Date())
     }
 }
+
+protocol RotatableViewController {
+    //marker protocol
+}
+
+extension AppDelegate {
+
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        guard
+            let rootVc = self.topViewControllerWithRootViewController(rootViewController: window?.rootViewController),
+            rootVc.isBeingDismissed == false,
+            let _ = rootVc as? RotatableViewController
+        else {
+            return .portrait  // Some condition not met, so default answer for app
+        }
+        // Conditions met, is rotatable:
+        return .allButUpsideDown
+    }
+
+
+    private func topViewControllerWithRootViewController(rootViewController: UIViewController!) -> UIViewController? {
+        if (rootViewController == nil) {
+            return nil
+        }
+        if (rootViewController.isKind(of: UITabBarController.self)) {
+            return topViewControllerWithRootViewController(rootViewController: (rootViewController as! UITabBarController).selectedViewController)
+        }
+        else if (rootViewController.isKind(of: UINavigationController.self)) {
+            return topViewControllerWithRootViewController(rootViewController: (rootViewController as! UINavigationController).visibleViewController)
+        }
+        else if (rootViewController.presentedViewController != nil) {
+            return topViewControllerWithRootViewController(rootViewController: rootViewController.presentedViewController)
+        }
+        return rootViewController
+    }
+}

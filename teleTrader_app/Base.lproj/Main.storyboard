@@ -364,11 +364,66 @@
                     <navigationItem key="navigationItem" id="a3Z-K4-Rbt"/>
                     <connections>
                         <outlet property="newsTableView" destination="QRd-ux-fd6" id="TtC-yi-E84"/>
+                        <segue destination="us4-0i-szE" kind="show" identifier="goToNewsDetails" id="tMQ-1B-qA0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mja-ld-a4x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1070" y="1444"/>
+        </scene>
+        <!--News Details View Controller-->
+        <scene sceneID="Tw1-Pd-IaL">
+            <objects>
+                <viewController id="us4-0i-szE" customClass="NewsDetailsViewController" customModule="teleTrader_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qft-hx-S0M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="54J-ai-JTw">
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="269"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="Idi-6K-FcD"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Naslovv" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cl-4W-u2E">
+                                <rect key="frame" x="30" y="118" width="354" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bfasf " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sc5-s6-lTu">
+                                <rect key="frame" x="20" y="368" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KbY-uf-iT4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KbY-uf-iT4" firstAttribute="trailing" secondItem="4Cl-4W-u2E" secondAttribute="trailing" constant="30" id="2dR-Y6-fch"/>
+                            <constraint firstItem="54J-ai-JTw" firstAttribute="leading" secondItem="KbY-uf-iT4" secondAttribute="leading" id="MKt-2J-zlH"/>
+                            <constraint firstItem="54J-ai-JTw" firstAttribute="centerX" secondItem="Qft-hx-S0M" secondAttribute="centerX" id="Mf8-KB-h4X"/>
+                            <constraint firstItem="sc5-s6-lTu" firstAttribute="top" secondItem="54J-ai-JTw" secondAttribute="bottom" constant="10" id="Wsv-TP-7Ji"/>
+                            <constraint firstItem="KbY-uf-iT4" firstAttribute="trailing" secondItem="54J-ai-JTw" secondAttribute="trailing" id="i2n-E7-iFM"/>
+                            <constraint firstItem="4Cl-4W-u2E" firstAttribute="leading" secondItem="KbY-uf-iT4" secondAttribute="leading" constant="30" id="kBE-fQ-74p"/>
+                            <constraint firstItem="4Cl-4W-u2E" firstAttribute="top" secondItem="KbY-uf-iT4" secondAttribute="top" constant="30" id="l1G-LO-h84"/>
+                            <constraint firstItem="KbY-uf-iT4" firstAttribute="trailing" secondItem="sc5-s6-lTu" secondAttribute="trailing" constant="20" id="lod-RU-frC"/>
+                            <constraint firstItem="54J-ai-JTw" firstAttribute="top" secondItem="KbY-uf-iT4" secondAttribute="top" id="mlP-6N-Lld"/>
+                            <constraint firstItem="sc5-s6-lTu" firstAttribute="leading" secondItem="KbY-uf-iT4" secondAttribute="leading" constant="20" id="n2P-g3-xZa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Dce-UR-u7E"/>
+                    <connections>
+                        <outlet property="headlineLabelBottom" destination="sc5-s6-lTu" id="izM-Rw-Zwb"/>
+                        <outlet property="headlineLabelTop" destination="4Cl-4W-u2E" id="QNF-MB-0H9"/>
+                        <outlet property="newsImageView" destination="54J-ai-JTw" id="CVZ-ff-25o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lk7-BY-E3G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="660.86956521739137" y="2140.8482142857142"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="nzz-Yr-2zQ">
@@ -469,6 +524,7 @@
         <image name="arrow.up.square" catalog="system" width="128" height="114"/>
         <image name="doc.plaintext" catalog="system" width="115" height="128"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <image name="square.grid.3x1.below.line.grid.1x2" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

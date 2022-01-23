@@ -50,7 +50,7 @@ final class NewsTableViewCell: UITableViewCell {
         if let tag = news.tags.filter({ $0.position == "0" }).first {
             if let imageCode = tag.picTT?.imageID {
                 self.newsId = imageCode
-                DataManager.sharedInstance.getNewsImageData(forCode: imageCode) { [weak self] (data, error, id) in
+                DataManager.sharedInstance.getNewsImageData(forCode: imageCode, andSize: .small) { [weak self] (data, error, id) in
                     guard let self = self else { return }
                     DispatchQueue.main.async {
                         if let data = data {

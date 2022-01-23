@@ -11,9 +11,9 @@ final class NewsHomeViewController: SharedViewController {
 
     //MARK: - properties
     private lazy var viewModel = NewsViewModel()
-    
     @IBOutlet weak var newsTableView: UITableView!
-    
+    private var selectedNews: News?
+    private let segueName = "goToNewsDetails"
     
     //MARK: - lifecycle
     override func viewDidLoad() {
@@ -43,6 +43,15 @@ final class NewsHomeViewController: SharedViewController {
         viewModel.getNews()
         super.handleRefresh()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedNews = self.selectedNews else { return }
+        if segue.identifier == segueName {
+            if let destinationVC = segue.destination as? NewsDetailsViewController {
+                destinationVC.news = selectedNews
+            }
+        }
+    }
 
 }
 
@@ -63,18 +72,12 @@ extension NewsHomeViewController: NewsViewModelDelegate {
 extension NewsHomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 78
+        return 76
     }
     
-//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-//        return .delete
-//    }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        let symbolsArray = viewModel.returnSymbolDataBasedOnNamesFilter()
-//        selectedSymbol = symbolsArray[indexPath.row]
-//
-//        performSegue(withIdentifier: "goToDetails", sender: self)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        selectedNews = viewModel.returnSelectedNews(forIndexPath: indexPath)
+        performSegue(withIdentifier: segueName, sender: self)
+    }
 }
