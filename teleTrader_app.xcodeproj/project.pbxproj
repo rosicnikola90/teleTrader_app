@@ -14,6 +14,7 @@
 		BC3BBDB9279DA7A6006BD28A /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3BBDB8279DA7A5006BD28A /* NewsDetailsViewController.swift */; };
 		BC3BBDBE279DB05E006BD28A /* Nikola Rosic ios developer CV.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BC3BBDBD279DB05E006BD28A /* Nikola Rosic ios developer CV.pdf */; };
 		BC3BBDC4279DC077006BD28A /* NewsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3BBDC3279DC077006BD28A /* NewsDetailsViewModel.swift */; };
+		BC3BBDC8279DD951006BD28A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3BBDC7279DD951006BD28A /* InfoViewController.swift */; };
 		BC497152279B53DC00BF5925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497151279B53DC00BF5925 /* AppDelegate.swift */; };
 		BC497154279B53DC00BF5925 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497153279B53DC00BF5925 /* SceneDelegate.swift */; };
 		BC497156279B53DC00BF5925 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497155279B53DC00BF5925 /* ListViewController.swift */; };
@@ -46,6 +47,7 @@
 		BC3BBDB8279DA7A5006BD28A /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		BC3BBDBD279DB05E006BD28A /* Nikola Rosic ios developer CV.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Nikola Rosic ios developer CV.pdf"; sourceTree = "<group>"; };
 		BC3BBDC3279DC077006BD28A /* NewsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewModel.swift; sourceTree = "<group>"; };
+		BC3BBDC7279DD951006BD28A /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		BC49714E279B53DC00BF5925 /* teleTrader_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = teleTrader_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC497151279B53DC00BF5925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC497153279B53DC00BF5925 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 				BC3BBDC3279DC077006BD28A /* NewsDetailsViewModel.swift */,
 			);
 			path = NewsDetailsScene;
+			sourceTree = "<group>";
+		};
+		BC3BBDC6279DD933006BD28A /* InfoScene */ = {
+			isa = PBXGroup;
+			children = (
+				BC3BBDC7279DD951006BD28A /* InfoViewController.swift */,
+			);
+			path = InfoScene;
 			sourceTree = "<group>";
 		};
 		BC497145279B53DC00BF5925 = {
@@ -163,6 +173,7 @@
 		BC497193279C340200BF5925 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				BC3BBDC6279DD933006BD28A /* InfoScene */,
 				BC3BBDBB279DA91A006BD28A /* NewsDetailsScene */,
 				BC4971A3279CC93700BF5925 /* NewsScene */,
 				BC49719E279CB40A00BF5925 /* SymbolDetailsScene */,
@@ -296,6 +307,7 @@
 				BC3BBDB9279DA7A6006BD28A /* NewsDetailsViewController.swift in Sources */,
 				BC497177279B657400BF5925 /* Constants.swift in Sources */,
 				BC49716C279B5DD400BF5925 /* NewsHomeViewController.swift in Sources */,
+				BC3BBDC8279DD951006BD28A /* InfoViewController.swift in Sources */,
 				BC49715C279B53DD00BF5925 /* teleTrader_app.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

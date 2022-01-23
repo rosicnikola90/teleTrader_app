@@ -62,16 +62,9 @@ final class NewsDetailsViewController: UIViewController, RotatableViewController
     }
     
     func newsImageUpdatedWitSuccess(images: [String : UIImage]) {
-        if UIDevice.current.orientation.isPortrait {
-            let key = NewsImageSize.medium.rawValue
-            if let image = images[key] {
-                newsImageView.image = image
-            }
-        } else {
-            let key = NewsImageSize.large.rawValue
-            if let image = images[key] {
-                newsImageView.image = image
-            }
+        let key = NewsImageSize.medium.rawValue
+        if let image = images[key] {
+            newsImageView.image = image
         }
     }
 }

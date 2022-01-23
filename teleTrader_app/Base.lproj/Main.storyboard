@@ -228,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T2C-dS-UI8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1048" y="1460"/>
+            <point key="canvasLocation" x="-835" y="2216"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -386,10 +386,10 @@
                                     <constraint firstAttribute="height" constant="270" id="Idi-6K-FcD"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Naslovv" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cl-4W-u2E">
-                                <rect key="frame" x="30" y="118" width="354" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Naslovv" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cl-4W-u2E">
+                                <rect key="frame" x="30" y="118" width="70" height="24"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bfasf " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sc5-s6-lTu">
@@ -402,7 +402,7 @@
                         <viewLayoutGuide key="safeArea" id="KbY-uf-iT4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KbY-uf-iT4" firstAttribute="trailing" secondItem="4Cl-4W-u2E" secondAttribute="trailing" constant="30" id="2dR-Y6-fch"/>
+                            <constraint firstItem="KbY-uf-iT4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Cl-4W-u2E" secondAttribute="trailing" constant="30" id="2dR-Y6-fch"/>
                             <constraint firstItem="54J-ai-JTw" firstAttribute="leading" secondItem="KbY-uf-iT4" secondAttribute="leading" id="MKt-2J-zlH"/>
                             <constraint firstItem="54J-ai-JTw" firstAttribute="centerX" secondItem="Qft-hx-S0M" secondAttribute="centerX" id="Mf8-KB-h4X"/>
                             <constraint firstItem="sc5-s6-lTu" firstAttribute="top" secondItem="54J-ai-JTw" secondAttribute="bottom" constant="10" id="Wsv-TP-7Ji"/>
@@ -423,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lk7-BY-E3G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="660.86956521739137" y="2140.8482142857142"/>
+            <point key="canvasLocation" x="736" y="2216"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="nzz-Yr-2zQ">
@@ -483,10 +483,10 @@
             </objects>
             <point key="canvasLocation" x="1070" y="656"/>
         </scene>
-        <!--View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="Kum-ax-R4p">
             <objects>
-                <viewController id="Oeq-EN-Qh9" sceneMemberID="viewController">
+                <viewController id="Oeq-EN-Qh9" customClass="InfoViewController" customModule="teleTrader_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UMn-e6-xbd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -534,6 +534,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
