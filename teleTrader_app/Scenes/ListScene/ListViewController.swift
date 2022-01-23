@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ListViewController: UIViewController {
+final class ListViewController: SharedViewController {
     
     //MARK: - properties
     @IBOutlet weak var filteringView: UIView!
@@ -46,11 +46,7 @@ final class ListViewController: UIViewController {
         }
     }
     
-    private let refresh: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .label
-        return refreshControl
-    }()
+   
     
     //MARK: - lifecycle
     override func viewDidLoad() {
@@ -70,7 +66,6 @@ final class ListViewController: UIViewController {
     private func setupView() {
         filteringView.backgroundColor = .quaternarySystemFill
         view.backgroundColor = .systemBackground
-        refresh.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         title = "List"
         viewModel.delegate = self
     }
@@ -86,9 +81,9 @@ final class ListViewController: UIViewController {
         namesPressCount += 1
     }
     
-    @objc private func handleRefresh() {
+    internal override func handleRefresh() {
         viewModel.getSymbols()
-        refresh.endRefreshing()
+        super.handleRefresh()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

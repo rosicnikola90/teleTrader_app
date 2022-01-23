@@ -42,4 +42,33 @@ final class DataManager {
         }
     }
     
+    func getNeededNews(_ completion: @escaping([News]?, String?) -> ()) {
+        RestManager.sharedInstance.getNewsFromServer { (news, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let news = news {
+                    completion(news, nil)
+                } else {
+                    completion(nil, "something went wrong")
+                }
+            }
+        }
+    }
+    
+    func getNewsImageData(forCode code: String, _ completion: @escaping(Data?, String?, String?) -> ()) {
+        
+        RestManager.sharedInstance.getImageData(forImageCode: code) { (data, error, id) in
+            if error != nil {
+                completion(nil, error, nil)
+            } else {
+                if let data = data {
+                    
+                    completion(data, nil , id)
+                } else {
+                    completion(nil, error, nil)
+                }
+            }
+        }
+    }
 }

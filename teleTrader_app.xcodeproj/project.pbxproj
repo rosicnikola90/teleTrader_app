@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC3BBDAE279D6976006BD28A /* SharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3BBDAD279D6976006BD28A /* SharedViewController.swift */; };
+		BC3BBDB2279D7027006BD28A /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3BBDB0279D7027006BD28A /* NewsTableViewCell.swift */; };
+		BC3BBDB3279D7027006BD28A /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3BBDB1279D7027006BD28A /* NewsTableViewCell.xib */; };
+		BC3BBDB6279D7B5A006BD28A /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3BBDB5279D7B5A006BD28A /* DateManager.swift */; };
 		BC497152279B53DC00BF5925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497151279B53DC00BF5925 /* AppDelegate.swift */; };
 		BC497154279B53DC00BF5925 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497153279B53DC00BF5925 /* SceneDelegate.swift */; };
 		BC497156279B53DC00BF5925 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497155279B53DC00BF5925 /* ListViewController.swift */; };
@@ -27,9 +31,15 @@
 		BC497199279C3B2200BF5925 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC497197279C3B2200BF5925 /* ListTableViewCell.xib */; };
 		BC49719C279C5E9A00BF5925 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49719B279C5E9A00BF5925 /* Extensions.swift */; };
 		BC4971A0279CB46800BF5925 /* SymbolDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49719F279CB46700BF5925 /* SymbolDetailsViewController.swift */; };
+		BC4971A7279CCA8800BF5925 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4971A6279CCA8800BF5925 /* NewsViewModel.swift */; };
+		BC4971AA279CCB8B00BF5925 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4971A9279CCB8B00BF5925 /* News.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC3BBDAD279D6976006BD28A /* SharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedViewController.swift; sourceTree = "<group>"; };
+		BC3BBDB0279D7027006BD28A /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		BC3BBDB1279D7027006BD28A /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		BC3BBDB5279D7B5A006BD28A /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		BC49714E279B53DC00BF5925 /* teleTrader_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = teleTrader_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC497151279B53DC00BF5925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC497153279B53DC00BF5925 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +62,8 @@
 		BC497197279C3B2200BF5925 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		BC49719B279C5E9A00BF5925 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BC49719F279CB46700BF5925 /* SymbolDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolDetailsViewController.swift; sourceTree = "<group>"; };
+		BC4971A6279CCA8800BF5925 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		BC4971A9279CCB8B00BF5925 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +98,6 @@
 			children = (
 				BC497193279C340200BF5925 /* Scenes */,
 				BC497186279BF5B700BF5925 /* Models */,
-				BC49717F279BEE7300BF5925 /* Controllers */,
 				BC49717A279B665200BF5925 /* SupportFiles */,
 				BC49716F279B5FF200BF5925 /* DataManagement */,
 				BC497157279B53DC00BF5925 /* Main.storyboard */,
@@ -103,6 +114,7 @@
 				BC497170279B600C00BF5925 /* DataManager.swift */,
 				BC497173279B64B600BF5925 /* RestManager.swift */,
 				BC497183279BF42100BF5925 /* NRXMLParser.swift */,
+				BC3BBDB5279D7B5A006BD28A /* DateManager.swift */,
 			);
 			path = DataManagement;
 			sourceTree = "<group>";
@@ -110,30 +122,24 @@
 		BC49717A279B665200BF5925 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				BC497180279BEED500BF5925 /* MainTabBarController.swift */,
 				BC49715D279B53DE00BF5925 /* Assets.xcassets */,
 				BC497176279B657400BF5925 /* Constants.swift */,
 				BC497151279B53DC00BF5925 /* AppDelegate.swift */,
 				BC497153279B53DC00BF5925 /* SceneDelegate.swift */,
 				BC49719B279C5E9A00BF5925 /* Extensions.swift */,
+				BC3BBDAD279D6976006BD28A /* SharedViewController.swift */,
 			);
 			name = SupportFiles;
 			path = teleTrader_app/SupportFiles;
 			sourceTree = SOURCE_ROOT;
-		};
-		BC49717F279BEE7300BF5925 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				BC49716B279B5DD400BF5925 /* NewsHomeViewController.swift */,
-				BC497180279BEED500BF5925 /* MainTabBarController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
 		};
 		BC497186279BF5B700BF5925 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				BC497187279BF5D900BF5925 /* Symbol.swift */,
 				BC49718C279C0D0800BF5925 /* Quote.swift */,
+				BC4971A9279CCB8B00BF5925 /* News.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -141,6 +147,7 @@
 		BC497193279C340200BF5925 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				BC4971A3279CC93700BF5925 /* NewsScene */,
 				BC49719E279CB40A00BF5925 /* SymbolDetailsScene */,
 				BC497194279C342700BF5925 /* ListScene */,
 			);
@@ -164,6 +171,17 @@
 				BC49719F279CB46700BF5925 /* SymbolDetailsViewController.swift */,
 			);
 			path = SymbolDetailsScene;
+			sourceTree = "<group>";
+		};
+		BC4971A3279CC93700BF5925 /* NewsScene */ = {
+			isa = PBXGroup;
+			children = (
+				BC49716B279B5DD400BF5925 /* NewsHomeViewController.swift */,
+				BC4971A6279CCA8800BF5925 /* NewsViewModel.swift */,
+				BC3BBDB0279D7027006BD28A /* NewsTableViewCell.swift */,
+				BC3BBDB1279D7027006BD28A /* NewsTableViewCell.xib */,
+			);
+			path = NewsScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +245,7 @@
 				BC497199279C3B2200BF5925 /* ListTableViewCell.xib in Resources */,
 				BC49715E279B53DE00BF5925 /* Assets.xcassets in Resources */,
 				BC497159279B53DC00BF5925 /* Main.storyboard in Resources */,
+				BC3BBDB3279D7027006BD28A /* NewsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,17 +258,22 @@
 			files = (
 				BC497184279BF42100BF5925 /* NRXMLParser.swift in Sources */,
 				BC497156279B53DC00BF5925 /* ListViewController.swift in Sources */,
+				BC3BBDB2279D7027006BD28A /* NewsTableViewCell.swift in Sources */,
 				BC497171279B600C00BF5925 /* DataManager.swift in Sources */,
 				BC497181279BEED500BF5925 /* MainTabBarController.swift in Sources */,
 				BC49718D279C0D0800BF5925 /* Quote.swift in Sources */,
 				BC4971A0279CB46800BF5925 /* SymbolDetailsViewController.swift in Sources */,
+				BC3BBDB6279D7B5A006BD28A /* DateManager.swift in Sources */,
 				BC497152279B53DC00BF5925 /* AppDelegate.swift in Sources */,
 				BC497174279B64B600BF5925 /* RestManager.swift in Sources */,
 				BC497198279C3B2200BF5925 /* ListTableViewCell.swift in Sources */,
+				BC4971A7279CCA8800BF5925 /* NewsViewModel.swift in Sources */,
 				BC497188279BF5D900BF5925 /* Symbol.swift in Sources */,
 				BC497154279B53DC00BF5925 /* SceneDelegate.swift in Sources */,
+				BC4971AA279CCB8B00BF5925 /* News.swift in Sources */,
 				BC49719C279C5E9A00BF5925 /* Extensions.swift in Sources */,
 				BC497191279C333600BF5925 /* ListViewModel.swift in Sources */,
+				BC3BBDAE279D6976006BD28A /* SharedViewController.swift in Sources */,
 				BC497177279B657400BF5925 /* Constants.swift in Sources */,
 				BC49716C279B5DD400BF5925 /* NewsHomeViewController.swift in Sources */,
 				BC49715C279B53DD00BF5925 /* teleTrader_app.xcdatamodeld in Sources */,

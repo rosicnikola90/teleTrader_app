@@ -39,6 +39,7 @@ final class SymbolDetailsViewController: UIViewController {
         let defaultValue = "/"
         
         title = "Details"
+        id.text = symbol.id
         symbolName.text = symbol.name                       ?? defaultValue
         tickerSymbol.text = symbol.tickerSymbol             ?? defaultValue
         isin.text = symbol.isin                             ?? defaultValue

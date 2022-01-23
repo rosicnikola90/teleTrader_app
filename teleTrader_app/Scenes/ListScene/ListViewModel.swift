@@ -33,7 +33,7 @@ final class ListViewModel: NSObject {
     
     //MARK: - metods
     func getSymbols() {
-        DataManager.sharedInstance.getNeededSymbols {[weak self] (symbols, error) in
+        DataManager.sharedInstance.getNeededSymbols { [weak self] (symbols, error) in
             guard let self = self else { return }
             
             DispatchQueue.main.async {
@@ -113,6 +113,5 @@ extension ListViewModel: UITableViewDataSource {
         }
         return cell
     }
-    
     
 }
