@@ -21,19 +21,24 @@ final class DataManager {
         }
     }
     private var previousRandom = 0.0
-    private var isAppJustStarted = true
+    private var isAppJustStarted = true {
+        willSet {
+            if newValue != isAppJustStarted {
+                makeRandomDouble(previous: previousRandom)
+                fireAPICalls(withDelay: randomDouble)
+            }
+        }
+    }
     private var xmls:[XMLLocalData]? = nil
     
     //MARK: - init
     private init() {
-        makeRandomDouble(previous: previousRandom)
-        fireAPICalls(withDelay: randomDouble)
         NotificationCenter.default.addObserver(self, selector: #selector(xmlStringHasUpdated(notification:)), name: Notification.Name(Constants.xmlStringNotification), object: nil)
     }
     
     deinit {
         print("DataManager deinit")
-        NotificationCenter.default.removeObserver(self, name: Notification.Name(Constants.xmlStringNotification), object: nil)
+        NotificationCenter.default.removeObserver(self)
     }
     
     //MARK: - methods
@@ -154,7 +159,7 @@ final class DataManager {
         do { xmls = try managedContext.fetch(request)
             print("loaded")
             if xmls != nil {
-            return xmls?.first?.xmlString
+                return xmls?.first?.xmlString
             } else {
                 return nil
             }

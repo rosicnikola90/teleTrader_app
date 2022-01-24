@@ -15,6 +15,7 @@ final class ListViewController: SharedViewController {
     @IBOutlet weak var namesButtonLabel: UIButton!
     @IBOutlet weak var upArrowImage: UIImageView!
     @IBOutlet weak var downArrowImage: UIImageView!
+    @IBOutlet weak var chgLeadingConstraint: NSLayoutConstraint!
     
     lazy private var viewModel = ListViewModel()
     
@@ -55,6 +56,11 @@ final class ListViewController: SharedViewController {
         setupView()
         setupTableView()
         viewModel.getSymbols()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        chgLeadingConstraint.constant = view.frame.size.width * 0.55 + 32
     }
     
     //MARK: - init
@@ -122,7 +128,6 @@ extension ListViewController: UITableViewDelegate {
 //MARK: -extension for ViewModelDelegate
 extension ListViewController: ListViewModelDelegate {
     func symbolsUpdatedWitSuccess() {
-        //namesPressCount = 0
         listTableView.reloadData()
     }
     

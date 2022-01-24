@@ -10,9 +10,9 @@ import Foundation
 final class DateManager {
     
     static let shared = DateManager()
+    private let formatter = DateFormatter()
     
     private init() {}
-    private let formatter = DateFormatter()
     
     public func toDate(from string: String) -> Date? {
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"

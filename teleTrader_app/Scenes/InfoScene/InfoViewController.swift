@@ -11,7 +11,6 @@ import PDFKit
 final class InfoViewController: UIViewController {
     
     private let pdfView = PDFView()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,5 +38,5 @@ final class InfoViewController: UIViewController {
             pdfView.scaleFactor = 0.7
         }
     }
-
+    
 }

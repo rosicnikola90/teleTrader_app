@@ -10,7 +10,6 @@ import UIKit
 
 protocol NewsDetailsViewModelDelegate: class {
     func newsImageUpdatedWitSuccess(images: [String : UIImage])
-    //func newsUpdatedWithError(error: String)
 }
 
 final class NewsDetailsViewModel: NSObject {

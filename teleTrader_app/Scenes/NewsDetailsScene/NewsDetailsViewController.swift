@@ -28,6 +28,10 @@ final class NewsDetailsViewController: UIViewController, RotatableViewController
         viewModel.getImages(for: news)
     }
     
+    deinit {
+        print("NewsDetailsViewController deinit")
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -39,19 +43,19 @@ final class NewsDetailsViewController: UIViewController, RotatableViewController
     //MARK: - methods
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-            super.viewWillTransition(to: size, with: coordinator)
-            if UIDevice.current.orientation.isLandscape {
-                print("Landscape")
-                if let image = viewModel.returnImage(forSize: .large) {
-                    newsImageView.image = image
-                }
-            } else {
-                print("Portrait")
-                if let image = viewModel.returnImage(forSize: .medium) {
-                    newsImageView.image = image
-                }
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+            print("Landscape")
+            if let image = viewModel.returnImage(forSize: .large) {
+                newsImageView.image = image
+            }
+        } else {
+            print("Portrait")
+            if let image = viewModel.returnImage(forSize: .medium) {
+                newsImageView.image = image
             }
         }
+    }
     
     private func setupView() {
         view.backgroundColor = .systemBackground

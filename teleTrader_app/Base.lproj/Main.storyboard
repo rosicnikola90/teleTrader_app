@@ -244,14 +244,17 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="last" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsr-8q-bBr">
                                         <rect key="frame" x="352" y="4" width="22" height="22"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="22" id="Dgo-l5-a0a"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="22" id="yT1-Va-MSK"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="chg %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uH-xd-Wwi">
-                                        <rect key="frame" x="270" y="4" width="32" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="chg %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uH-xd-Wwi">
+                                        <rect key="frame" x="200" y="4" width="35" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="Cqf-Qz-fio"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -296,14 +299,13 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="bJu-In-8sA" firstAttribute="centerY" secondItem="WO5-qF-FLj" secondAttribute="centerY" id="F5r-AC-eAk"/>
+                                    <constraint firstItem="Bsr-8q-bBr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7uH-xd-Wwi" secondAttribute="trailing" constant="8" symbolic="YES" id="NIQ-3u-e3U"/>
                                     <constraint firstItem="Bsr-8q-bBr" firstAttribute="centerY" secondItem="WO5-qF-FLj" secondAttribute="centerY" id="O0j-JE-sXl"/>
                                     <constraint firstItem="bJu-In-8sA" firstAttribute="leading" secondItem="nsT-BE-dhD" secondAttribute="trailing" constant="1" id="VQu-5D-6Mi"/>
                                     <constraint firstItem="nsT-BE-dhD" firstAttribute="leading" secondItem="WO5-qF-FLj" secondAttribute="leading" constant="25" id="WrD-h9-hr0"/>
-                                    <constraint firstItem="7uH-xd-Wwi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bJu-In-8sA" secondAttribute="trailing" constant="8" symbolic="YES" id="WuC-Qg-3Yg"/>
                                     <constraint firstItem="7uH-xd-Wwi" firstAttribute="centerY" secondItem="WO5-qF-FLj" secondAttribute="centerY" id="Z0t-Lv-vl2"/>
                                     <constraint firstAttribute="height" constant="30" id="aMb-EH-qoR"/>
                                     <constraint firstAttribute="trailing" secondItem="Bsr-8q-bBr" secondAttribute="trailing" constant="40" id="dM0-Aj-IjZ"/>
-                                    <constraint firstItem="Bsr-8q-bBr" firstAttribute="leading" secondItem="7uH-xd-Wwi" secondAttribute="trailing" constant="50" id="nAm-wr-baM"/>
                                     <constraint firstItem="nsT-BE-dhD" firstAttribute="centerY" secondItem="WO5-qF-FLj" secondAttribute="centerY" id="nCR-Sl-Hzf"/>
                                     <constraint firstItem="bJu-In-8sA" firstAttribute="centerY" secondItem="WO5-qF-FLj" secondAttribute="centerY" id="sd2-Ht-C57"/>
                                 </constraints>
@@ -323,10 +325,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q4A-i0-gWa" secondAttribute="trailing" id="Yzo-xp-d9B"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Q4A-i0-gWa" secondAttribute="bottom" id="cKm-6o-wDE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WO5-qF-FLj" secondAttribute="trailing" id="eg2-hS-h2N"/>
+                            <constraint firstItem="7uH-xd-Wwi" firstAttribute="leading" secondItem="Q4A-i0-gWa" secondAttribute="leading" constant="200" id="h4t-iH-paJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pTy-rO-AtJ"/>
                     <connections>
+                        <outlet property="chgLeadingConstraint" destination="h4t-iH-paJ" id="eSz-Hk-Yyl"/>
                         <outlet property="downArrowImage" destination="qRh-xL-eif" id="zbW-Ay-VFC"/>
                         <outlet property="filteringView" destination="WO5-qF-FLj" id="5Rg-P3-z7q"/>
                         <outlet property="listTableView" destination="Q4A-i0-gWa" id="kEq-ri-aec"/>

@@ -8,7 +8,7 @@
 import UIKit
 
 final class NewsHomeViewController: SharedViewController {
-
+    
     //MARK: - properties
     private lazy var viewModel = NewsViewModel()
     @IBOutlet weak var newsTableView: UITableView!
@@ -38,7 +38,7 @@ final class NewsHomeViewController: SharedViewController {
         title = "News"
         viewModel.delegate = self
     }
-
+    
     override func handleRefresh() {
         viewModel.getNews()
         super.handleRefresh()

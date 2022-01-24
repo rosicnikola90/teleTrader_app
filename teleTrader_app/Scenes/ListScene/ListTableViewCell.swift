@@ -29,7 +29,7 @@ final class ListTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-
+        
         symbolName.text = nil
         changePercent.text = nil
         last.text = nil
@@ -71,6 +71,6 @@ final class ListTableViewCell: UITableViewCell {
             return .label
         }
     }
-
- 
+    
+    
 }
