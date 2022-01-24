@@ -62,7 +62,5 @@ extension NewsViewModel: UITableViewDataSource {
         cell.configureCell(withNewsInfo: actualNews)
         return cell
     }
-    
-    
 }
 

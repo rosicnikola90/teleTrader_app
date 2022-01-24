@@ -27,8 +27,14 @@ final class ListViewModel: NSObject {
     private var isNamesFilterOn = false
     
     //MARK: - init
+    override init() {
+        super.init()
+        NotificationCenter.default.addObserver(self, selector: #selector(callFromTimer), name: NSNotification.Name(rawValue:Constants.timerCallNotificationName), object: nil)
+    }
+    
     deinit {
         print("ListViewModel deinit")
+        NotificationCenter.default.removeObserver(self, name: Notification.Name(Constants.timerCallNotificationName), object: nil)
     }
     
     //MARK: - metods
@@ -69,6 +75,10 @@ final class ListViewModel: NSObject {
         } else {
             return symbols
         }
+    }
+    
+    @objc private func callFromTimer() {
+        getSymbols()
     }
     
 }

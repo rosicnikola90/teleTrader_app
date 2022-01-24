@@ -19,7 +19,6 @@ final class InfoViewController: UIViewController {
         setupPdfView()
     }
     
-
     private func setupPdfView() {
         let url = Bundle.main.url(forResource: "Nikola Rosic ios developer CV", withExtension: "pdf")
         view.backgroundColor = .systemBackground

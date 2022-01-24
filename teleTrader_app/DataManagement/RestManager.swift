@@ -52,6 +52,7 @@ final class RestManager {
                 }
                 if let data = data, httpResponse.statusCode == 200 {
                     if let string = String(data: data, encoding: .utf8) {
+                        NotificationCenter.default.post(name: Notification.Name(Constants.xmlStringNotification), object: nil, userInfo: ["xmlString": string])
                         let parser = NRXMLParser(withXML: string, forXMLType: .symbol)
                         let arrayOfSymbols = parser.parseSymbols()
                         print("getSymbolsFromServer success count: \(arrayOfSymbols.count)")

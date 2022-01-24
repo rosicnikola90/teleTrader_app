@@ -52,7 +52,6 @@ final class NewsHomeViewController: SharedViewController {
             }
         }
     }
-
 }
 
 //MARK: -extension for ViewModelDelegate

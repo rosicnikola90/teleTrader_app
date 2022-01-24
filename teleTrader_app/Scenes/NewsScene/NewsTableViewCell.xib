@@ -26,13 +26,6 @@
                             <constraint firstAttribute="height" constant="70" id="otO-w8-yCe"/>
                         </constraints>
                     </imageView>
-                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTP-6g-59R">
-                        <rect key="frame" x="8" y="8" width="196" height="56"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <color key="textColor" systemColor="labelColor"/>
-                        <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="13"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnN-n8-YIj">
                         <rect key="frame" x="8" y="66" width="0.0" height="10"/>
                         <constraints>
@@ -42,12 +35,17 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="dHf-H4-e1z">
+                        <rect key="frame" x="8" y="8" width="39.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="pTP-6g-59R" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="37B-Kk-N4Q"/>
-                    <constraint firstItem="pTP-6g-59R" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="3A4-yM-Hol"/>
-                    <constraint firstItem="4qN-uo-7jf" firstAttribute="leading" secondItem="pTP-6g-59R" secondAttribute="trailing" constant="8" id="Fhd-hO-9cD"/>
-                    <constraint firstItem="vnN-n8-YIj" firstAttribute="top" secondItem="pTP-6g-59R" secondAttribute="bottom" constant="2" id="MUl-AV-8AB"/>
+                    <constraint firstItem="dHf-H4-e1z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="ASM-7h-AxR"/>
+                    <constraint firstItem="4qN-uo-7jf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dHf-H4-e1z" secondAttribute="trailing" constant="8" id="CUB-ki-Cg1"/>
+                    <constraint firstItem="dHf-H4-e1z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Onz-C4-Ebn"/>
                     <constraint firstItem="vnN-n8-YIj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Vsv-iG-SpI"/>
                     <constraint firstAttribute="bottom" secondItem="vnN-n8-YIj" secondAttribute="bottom" constant="2" id="XxU-z0-1KH"/>
                     <constraint firstAttribute="trailing" secondItem="4qN-uo-7jf" secondAttribute="trailing" constant="8" id="bJb-TX-CBN"/>
@@ -57,7 +55,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="agoInfo" destination="vnN-n8-YIj" id="XB6-Cb-13L"/>
-                <outlet property="newsHeadline" destination="pTP-6g-59R" id="QFl-8a-PIO"/>
+                <outlet property="newsHeadline" destination="dHf-H4-e1z" id="arP-id-pc8"/>
                 <outlet property="newsImage" destination="4qN-uo-7jf" id="jJN-Fi-Bb0"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="62.946428571428569"/>

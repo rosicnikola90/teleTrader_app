@@ -11,7 +11,7 @@ final class NewsTableViewCell: UITableViewCell {
 
     //MARK: - properties
     @IBOutlet weak var newsImage: UIImageView!
-    @IBOutlet weak var newsHeadline: UITextView!
+    @IBOutlet weak var newsHeadline: UILabel!
     @IBOutlet weak var agoInfo: UILabel!
     
     var newsId = ""

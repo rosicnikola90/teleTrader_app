@@ -122,7 +122,8 @@ extension ListViewController: UITableViewDelegate {
 //MARK: -extension for ViewModelDelegate
 extension ListViewController: ListViewModelDelegate {
     func symbolsUpdatedWitSuccess() {
-        namesPressCount = 0
+        //namesPressCount = 0
+        listTableView.reloadData()
     }
     
     func symbolsUpdatedWithError(error: String) {

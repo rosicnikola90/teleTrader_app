@@ -19,7 +19,7 @@
 		BC497154279B53DC00BF5925 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497153279B53DC00BF5925 /* SceneDelegate.swift */; };
 		BC497156279B53DC00BF5925 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC497155279B53DC00BF5925 /* ListViewController.swift */; };
 		BC497159279B53DC00BF5925 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC497157279B53DC00BF5925 /* Main.storyboard */; };
-		BC49715C279B53DD00BF5925 /* teleTrader_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC49715A279B53DD00BF5925 /* teleTrader_app.xcdatamodeld */; };
+		BC49715C279B53DD00BF5925 /* XMLLocalData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC49715A279B53DD00BF5925 /* XMLLocalData.xcdatamodeld */; };
 		BC49715E279B53DE00BF5925 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC49715D279B53DE00BF5925 /* Assets.xcassets */; };
 		BC497161279B53DE00BF5925 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC49715F279B53DE00BF5925 /* LaunchScreen.storyboard */; };
 		BC49716C279B5DD400BF5925 /* NewsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49716B279B5DD400BF5925 /* NewsHomeViewController.swift */; };
@@ -127,7 +127,7 @@
 				BC49716F279B5FF200BF5925 /* DataManagement */,
 				BC497157279B53DC00BF5925 /* Main.storyboard */,
 				BC49715F279B53DE00BF5925 /* LaunchScreen.storyboard */,
-				BC49715A279B53DD00BF5925 /* teleTrader_app.xcdatamodeld */,
+				BC49715A279B53DD00BF5925 /* XMLLocalData.xcdatamodeld */,
 				BC497162279B53DE00BF5925 /* Info.plist */,
 			);
 			path = teleTrader_app;
@@ -308,7 +308,7 @@
 				BC497177279B657400BF5925 /* Constants.swift in Sources */,
 				BC49716C279B5DD400BF5925 /* NewsHomeViewController.swift in Sources */,
 				BC3BBDC8279DD951006BD28A /* InfoViewController.swift in Sources */,
-				BC49715C279B53DD00BF5925 /* teleTrader_app.xcdatamodeld in Sources */,
+				BC49715C279B53DD00BF5925 /* XMLLocalData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,13 +512,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		BC49715A279B53DD00BF5925 /* teleTrader_app.xcdatamodeld */ = {
+		BC49715A279B53DD00BF5925 /* XMLLocalData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				BC49715B279B53DD00BF5925 /* teleTrader_app.xcdatamodel */,
 			);
 			currentVersion = BC49715B279B53DD00BF5925 /* teleTrader_app.xcdatamodel */;
-			path = teleTrader_app.xcdatamodeld;
+			path = XMLLocalData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

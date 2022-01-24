@@ -73,7 +73,7 @@ extension NRXMLParser: XMLParserDelegate {
                     currentSymbol?.id = id
                 }
                 if let tickerSymbol = attributeDict["tickerSymbol"] as String? {
-                    currentSymbol?.id = tickerSymbol
+                    currentSymbol?.tickerSymbol = tickerSymbol
                 }
                 if let isin = attributeDict["isin"] as String? {
                     currentSymbol?.isin = isin

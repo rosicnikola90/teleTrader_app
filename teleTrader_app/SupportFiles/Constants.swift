@@ -17,4 +17,8 @@ struct Constants {
     static let sizeSufixMedium = "w320_q50"
     static let sizeSufixSmall = "w220_q40"
     static let sizeSufixLarge = "w800_q70"
+    static let xmlStringNotification = "xmlStringNotification"
+    static let timerCallNotificationName = "timerCall"
+    static let rangeForTimerMin = 3.0
+    static let rangeForTimerMax = 30.0
 }

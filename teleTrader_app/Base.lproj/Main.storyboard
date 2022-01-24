@@ -17,8 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="OTG-A2-ein">
-                                <rect key="frame" x="12" y="138" width="390" height="42"/>
-                                <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="25"/>
+                                <rect key="frame" x="184" y="138" width="46.5" height="33.5"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="20"/>
                                 <color key="textColor" systemColor="systemBlueColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -200,12 +200,12 @@
                             <constraint firstItem="dbk-ya-4oA" firstAttribute="bottom" secondItem="aZ6-ot-7Oq" secondAttribute="bottom" constant="12" id="0yZ-KX-LuW"/>
                             <constraint firstItem="dbk-ya-4oA" firstAttribute="trailing" secondItem="aZ6-ot-7Oq" secondAttribute="trailing" constant="45" id="CR7-EJ-XJd"/>
                             <constraint firstItem="aZ6-ot-7Oq" firstAttribute="top" secondItem="dbk-ya-4oA" secondAttribute="top" constant="120" id="EHT-p4-GkD"/>
-                            <constraint firstItem="dbk-ya-4oA" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="OTG-A2-ein" secondAttribute="trailing" constant="12" id="KRE-VV-8LK"/>
+                            <constraint firstItem="dbk-ya-4oA" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OTG-A2-ein" secondAttribute="trailing" constant="12" id="KRE-VV-8LK"/>
                             <constraint firstItem="OTG-A2-ein" firstAttribute="top" secondItem="dbk-ya-4oA" secondAttribute="top" constant="50" id="Q6x-bL-Rnz"/>
                             <constraint firstItem="OTG-A2-ein" firstAttribute="centerX" secondItem="1jt-0Q-pKN" secondAttribute="centerX" id="c7H-69-uVF"/>
                             <constraint firstItem="aZ6-ot-7Oq" firstAttribute="centerX" secondItem="1jt-0Q-pKN" secondAttribute="centerX" id="j2d-Kf-WJU"/>
                             <constraint firstItem="aZ6-ot-7Oq" firstAttribute="leading" secondItem="dbk-ya-4oA" secondAttribute="leading" constant="45" id="qyQ-vY-VKM"/>
-                            <constraint firstItem="OTG-A2-ein" firstAttribute="leading" relation="lessThanOrEqual" secondItem="dbk-ya-4oA" secondAttribute="leading" constant="12" id="rok-1P-3yo"/>
+                            <constraint firstItem="OTG-A2-ein" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dbk-ya-4oA" secondAttribute="leading" constant="12" id="rok-1P-3yo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zgi-NY-GGF"/>
